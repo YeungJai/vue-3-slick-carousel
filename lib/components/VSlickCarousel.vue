@@ -804,6 +804,8 @@ const slideGroupCount = computed(() =>
   getSlideGroupCount(slides.value.length, settings.value.slidesPerGroup)
 )
 
+const curretGroupsToShow = computed(()=> settings.value.groupsToShow)
+
 const rawSlideGroups = computed<VNode[][]>(() => {
   const slideGroups: VNode[][] = []
   const slidesPerGroup = settings.value.slidesPerGroup
@@ -924,7 +926,8 @@ defineExpose({
   pause,
   autoPlay,
   slideGroupCount,
-  currentSliderGroupIndex
+  currentSliderGroupIndex,
+  curretGroupsToShow
 })
 
 onMounted(() => {
